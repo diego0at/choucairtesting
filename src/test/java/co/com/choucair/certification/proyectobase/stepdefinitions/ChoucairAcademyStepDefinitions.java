@@ -1,5 +1,6 @@
 package co.com.choucair.certification.proyectobase.stepdefinitions;
 
+import co.com.choucair.certification.proyectobase.tasks.OpenUp;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -17,7 +18,7 @@ public class ChoucairAcademyStepDefinitions {
     @Given("^than diego wants to register at the utest\\.com$")
     public void thanDiegoWantsToRegisterAtTheUtestCom() {
         // Write code here that turns the phrase above into concrete actions
-
+        OnStage.theActorCalled("diego").wasAbleTo(OpenUp.thePage());
     }
 
     @When("^go to the Join Today registration option$")
