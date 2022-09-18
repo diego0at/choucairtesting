@@ -16,6 +16,9 @@ public class CompleteSignUpAddressForm implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Enter.theValue("Cali").into(AddressFormPage.INPUT_CITY),
+
+
+
                 Enter.theValue("52007").into(AddressFormPage.INPUT_POSTAL_CODE),
                 Click.on(AddressFormPage.INPUT_SELECT_COUNTRY),
                 Enter.theValue("Colombia").into(AddressFormPage.INPUT_COUNTRY),

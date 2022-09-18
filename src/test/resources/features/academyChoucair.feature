@@ -6,4 +6,4 @@
   Scenario: create a new user
     Given than diego wants to register at the utest.com
     When go to the Join Today registration option
-    Then fill in the form and create a new user
+    Then fill in the form and create a new user Welcome to the

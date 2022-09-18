@@ -1,10 +1,12 @@
 package co.com.choucair.certification.proyectobase.stepdefinitions;
 
+import co.com.choucair.certification.proyectobase.questions.Answer;
 import co.com.choucair.certification.proyectobase.tasks.*;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
@@ -33,10 +35,10 @@ public class ChoucairAcademyStepDefinitions {
 
     }
 
-    @Then("^fill in the form and create a new user$")
-    public void fillInTheFormAndCreateANewUser() {
+    @Then("^fill in the form and create a new user (.*)$")
+    public void fillInTheFormAndCreateANewUser(String question) {
         // Write code here that turns the phrase above into concrete actions
-        //throw new PendingException();
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Answer.toThe(question)));
     }
 
 }

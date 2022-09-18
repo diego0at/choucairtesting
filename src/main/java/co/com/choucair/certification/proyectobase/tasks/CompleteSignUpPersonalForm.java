@@ -19,7 +19,7 @@ public class CompleteSignUpPersonalForm implements Task {
         actor.attemptsTo(
                 Enter.theValue("Andres").into(PersonalFormPage.INPUT_FIRST_NAME),
                 Enter.theValue("Mejia").into(PersonalFormPage.INPUT_LAST_NAME),
-                Enter.theValue("diegoatdev@gmail.com").into(PersonalFormPage.INPUT_MAIL),
+                Enter.theValue("diegoatdev8@gmail.com").into(PersonalFormPage.INPUT_MAIL),
                 SelectFromOptions.byVisibleText("December").from(PersonalFormPage.INPUT_SELECT_MONTH),
                 SelectFromOptions.byVisibleText("3").from(PersonalFormPage.INPUT_SELECT_DAY),
                 SelectFromOptions.byVisibleText("1999").from(PersonalFormPage.INPUT_SELECT_YEAR),

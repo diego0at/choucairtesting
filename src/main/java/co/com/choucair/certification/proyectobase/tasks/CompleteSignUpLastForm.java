@@ -16,8 +16,8 @@ public class CompleteSignUpLastForm implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
 
-                Enter.theValue("myPasswordTest").into(LastFormPage.INPUT_PASSWORD),
-                Enter.theValue("myPassWordTest").into(LastFormPage.INPUT_CONFIRM_PASSWORD),
+                Enter.theValue("myPasswordTest01").into(LastFormPage.INPUT_PASSWORD),
+                Enter.theValue("myPasswordTest01").into(LastFormPage.INPUT_CONFIRM_PASSWORD),
                 Click.on(LastFormPage.INPUT_TERMS_OF_USE),
                 Click.on(LastFormPage.INPUT_PRIVACY_SECURITY),
 
