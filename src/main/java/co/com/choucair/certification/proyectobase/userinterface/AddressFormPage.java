@@ -5,8 +5,15 @@ import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
 public class AddressFormPage extends PageObject {
+        public static final Target CITY_AUTO_DETECTED = Target.the("Enter the city where yuo live")
+                .located(By.xpath("(//span[@class='check-mark'])[1]"));
+
         public static final Target INPUT_CITY = Target.the("Enter the city where yuo live")
-            .located(By.id("city"));
+                .located(By.id("city"));
+
+        public static final Target INPUT_SELECT_CITY = Target.the("Select the city where yuo live")
+                .located(By.id("city"));
+
         public static final Target INPUT_POSTAL_CODE = Target.the("Enter the postal code where yuo live")
             .located(By.id("zip"));
         public static final Target INPUT_SELECT_COUNTRY = Target.the("Enter the postal code where yuo live")

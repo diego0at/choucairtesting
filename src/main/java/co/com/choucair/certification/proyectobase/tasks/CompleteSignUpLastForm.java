@@ -8,16 +8,23 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 
 public class CompleteSignUpLastForm implements Task {
-    public static CompleteSignUpLastForm stepFour() {
-        return Tasks.instrumented(CompleteSignUpLastForm.class);
+
+    protected String strPassword;
+
+    public CompleteSignUpLastForm(String strPassword) {
+        this.strPassword = strPassword;
+    }
+
+    public static CompleteSignUpLastForm stepFour(String strPassword) {
+        return Tasks.instrumented(CompleteSignUpLastForm.class, strPassword);
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
 
-                Enter.theValue("myPasswordTest").into(LastFormPage.INPUT_PASSWORD),
-                Enter.theValue("myPassWordTest").into(LastFormPage.INPUT_CONFIRM_PASSWORD),
+                Enter.theValue(strPassword).into(LastFormPage.INPUT_PASSWORD),
+                Enter.theValue(strPassword).into(LastFormPage.INPUT_CONFIRM_PASSWORD),
                 Click.on(LastFormPage.INPUT_TERMS_OF_USE),
                 Click.on(LastFormPage.INPUT_PRIVACY_SECURITY),
 
