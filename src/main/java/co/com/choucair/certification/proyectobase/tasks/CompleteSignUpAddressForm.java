@@ -6,6 +6,9 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
+import net.serenitybdd.screenplay.waits.Wait;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
 public class CompleteSignUpAddressForm implements Task {
     public static CompleteSignUpAddressForm stepTwo() {
@@ -14,16 +17,19 @@ public class CompleteSignUpAddressForm implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+
         actor.attemptsTo(
-                Enter.theValue("Cali").into(AddressFormPage.INPUT_CITY),
 
+            WaitUntil.the(AddressFormPage.CITY_AUTO_DETECTED, WebElementStateMatchers.isVisible())
+                                .forNoMoreThan(10).seconds(),
 
+            /*Enter.theValue("Cali").into(AddressFormPage.INPUT_CITY),
+            Enter.theValue("52007").into(AddressFormPage.INPUT_POSTAL_CODE),
+            Click.on(AddressFormPage.INPUT_SELECT_COUNTRY),
+            Enter.theValue("Colombia").into(AddressFormPage.INPUT_COUNTRY),
+            Click.on(AddressFormPage.INPUT_ITEM_COUNTRY)*/
 
-                Enter.theValue("52007").into(AddressFormPage.INPUT_POSTAL_CODE),
-                Click.on(AddressFormPage.INPUT_SELECT_COUNTRY),
-                Enter.theValue("Colombia").into(AddressFormPage.INPUT_COUNTRY),
-                Click.on(AddressFormPage.INPUT_ITEM_COUNTRY),
-                Click.on(AddressFormPage.NEXT_DEVICES)
+            Click.on(AddressFormPage.NEXT_DEVICES)
         );
     }
 }
