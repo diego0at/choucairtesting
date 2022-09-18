@@ -9,7 +9,7 @@
       | Join Today |
     When go to the Join Today registration option
       | strFirstName  |  strLastName  | strMail               | strMonth  | strDay   |  strYear | strLanguages  | strPassword           |
-      | diego         |  andres       | newMail01@gmail.com     | December  | 3        |  1999    | Spanish       | mySecurityPassword01  |
+      | diego         |  andres       | dgoandress45@gmail.com     | December  | 3        |  1999    | Spanish       | mySecurityPassword01  |
     Then fill in the form and create a new user
       | strWelcomeMessage |
       | Welcome to the    |
